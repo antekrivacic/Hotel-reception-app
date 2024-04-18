@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.reception.projektkrivacic.controllers.AccommodationsScreenController">
+    <ToolBar prefHeight="60.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+        <items>
+            <Label fx:id="usernameLabel" prefHeight="43.0" prefWidth="87.0" text="User123">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+                <padding>
+                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                </padding>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#changeToShowAccommodationsScene" prefHeight="40.0" prefWidth="139.0" style="-fx-background-color: #0876fd;" text="Accommodations" />
+         <Region prefHeight="50.0" prefWidth="20.0" />
+         <Button mnemonicParsing="false" onAction="#changeToSearchReservationsScene" prefHeight="30.0" prefWidth="148.0" style="-fx-background-color: #f73636;" text="Reservations" />
+            <Button mnemonicParsing="false" onAction="#changeToReceiptScene" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #f73636;" text="Receipts" />
+            <Button mnemonicParsing="false" onAction="#changeToShowUsersScene" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #f73636;" text="Users" />
+            <Button mnemonicParsing="false" onAction="#changeToHotelFinancesScene" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #f73636;" text="Hotel finances" />
+         <Button mnemonicParsing="false" onAction="#changeToChangesScene" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #f73636;" text="Changes" />
+         <Region prefHeight="53.0" prefWidth="20.0" />
+            <Button mnemonicParsing="false" onAction="#changeToLoginScene" prefHeight="41.0" prefWidth="75.0" style="-fx-background-color: #0876fd;" text="Log out" />
+        </items>
+    </ToolBar>
+
+   <GridPane layoutY="59.0" prefHeight="600.0" prefWidth="1002.0">
+     <columnConstraints>
+       <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0377506950057" minWidth="10.0" prefWidth="332.0377506950057" />
+       <ColumnConstraints hgrow="SOMETIMES" maxWidth="521.6604182513938" minWidth="10.0" prefWidth="345.05661135137507" />
+         <ColumnConstraints hgrow="SOMETIMES" maxWidth="521.6604182513938" minWidth="10.0" prefWidth="345.05661135137507" />
+         <ColumnConstraints hgrow="SOMETIMES" maxWidth="485.00004622723225" minWidth="10.0" prefWidth="268.9810988744333" />
+         <ColumnConstraints />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints maxHeight="120.2641641434167" minHeight="4.339611225936238" prefHeight="80.88680214099342" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="120.2641641434167" minHeight="10.0" prefHeight="35.16978802787921" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="120.2641641434167" minHeight="0.0" prefHeight="85.32075747649165" vgrow="SOMETIMES" />
+       <RowConstraints maxHeight="416.60378033701545" minHeight="10.0" prefHeight="393.96227856775636" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+         <Label text="All accommodations" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+            <font>
+               <Font name="System Bold" size="28.0" />
+            </font>
+         </Label>
+         <TableView fx:id="roomsTableView" prefHeight="391.0" prefWidth="1004.0" GridPane.columnSpan="4" GridPane.rowIndex="3">
+           <columns>
+             <TableColumn fx:id="accommodationIdTableColumn" prefWidth="45.28305238485336" text="ID" />
+             <TableColumn fx:id="accommodationTypeTableColumn" prefWidth="186.5660400390625" text="Accommondation type" />
+               <TableColumn fx:id="roomNumberTableColumn" prefWidth="116.83018493652344" text="Room number" />
+               <TableColumn fx:id="accommodationFloorTableColumn" prefWidth="191.09445190429688" text="Accommodation floor" />
+               <TableColumn fx:id="numberOfBedsTableColumn" prefWidth="172.07537841796875" text="Number of beds" />
+               <TableColumn fx:id="accommodationPriceTableColumn" minWidth="0.0" prefWidth="188.37744140625" text="Accommodation price" />
+               <TableColumn fx:id="isAvailableTableColumn" minWidth="0.0" prefWidth="112.3018798828125" text="Availability" />
+           </columns>
+         </TableView>
+         <Button mnemonicParsing="false" onAction="#showReservations" text="Search" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+         <Label text="Room type:" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+            <GridPane.margin>
+               <Insets right="10.0" />
+            </GridPane.margin>
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Label>
+         <ComboBox fx:id="roomTypeComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         <CheckBox fx:id="showOnlyAvailableRoomsCheckBox" mnemonicParsing="false" text="Show only avaiable rooms" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+         <Button fx:id="showReservationsButton" mnemonicParsing="false" onAction="#addNewAccommodation" prefHeight="36.0" prefWidth="106.0" text="Add new" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Button>
+      </children>
+   </GridPane>
+</AnchorPane>

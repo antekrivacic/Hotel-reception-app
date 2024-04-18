@@ -1,0 +1,3 @@
+.my-table-view .table-row-cell {
+    -fx-cell-size: 60px;
+}

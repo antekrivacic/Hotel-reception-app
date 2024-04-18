@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.reception.projektkrivacic.controllers.ReceiptsScreenController">
+    <ToolBar prefHeight="60.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+        <items>
+            <Label fx:id="usernameLabel" prefHeight="43.0" prefWidth="87.0" text="User123">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+                <padding>
+                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                </padding>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#changeToShowAccommodationsScene" prefHeight="40.0" prefWidth="139.0" style="-fx-background-color: #0876fd;" text="Accommodations" />
+            <Region prefHeight="50.0" prefWidth="20.0" />
+            <Button mnemonicParsing="false" onAction="#changeToSearchReservationsScene" prefHeight="30.0" prefWidth="148.0" style="-fx-background-color: #f73636;" text="Reservations" />
+            <Button mnemonicParsing="false" onAction="#changeToReceiptScene" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #f73636;" text="Receipts" />
+            <Button mnemonicParsing="false" onAction="#changeToShowUsersScene" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #f73636;" text="Users" />
+            <Button mnemonicParsing="false" onAction="#changeToHotelFinancesScene" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #f73636;" text="Hotel finances" />
+            <Button mnemonicParsing="false" onAction="#changeToChangesScene" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #f73636;" text="Changes" />
+            <Region prefHeight="50.0" prefWidth="20.0" />
+            <Button mnemonicParsing="false" onAction="#changeToLoginScene" prefHeight="40.0" prefWidth="75.0" style="-fx-background-color: #0876fd" text="Log out" />
+        </items>
+    </ToolBar>
+
+    <GridPane layoutY="60.0" prefHeight="540.0" prefWidth="1001.0">
+     <columnConstraints>
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+       <ColumnConstraints hgrow="SOMETIMES" maxWidth="270.999985192076" minWidth="10.0" prefWidth="149.43396282909046" />
+         <ColumnConstraints hgrow="SOMETIMES" maxWidth="393.05663849561427" minWidth="10.0" prefWidth="246.33959766468115" />
+         <ColumnConstraints hgrow="SOMETIMES" maxWidth="323.09436667453576" minWidth="10.0" prefWidth="323.09436667453576" />
+     </columnConstraints>
+     <rowConstraints>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+         <TableView fx:id="receiptsTable" prefHeight="200.0" prefWidth="878.0" GridPane.columnSpan="4" GridPane.rowIndex="2" GridPane.rowSpan="2">
+           <columns>
+             <TableColumn fx:id="receiptIdColumn" prefWidth="115.92452758550644" text="ID" />
+             <TableColumn fx:id="reservationIdColumn" prefWidth="162.11322021484375" text="Reservation ID" />
+               <TableColumn fx:id="totalPriceColumn" prefWidth="192.9056396484375" text="Total amount" />
+               <TableColumn fx:id="paymentMethodColumn" prefWidth="211.0189208984375" text="Payment method" />
+               <TableColumn fx:id="paymentTimeColumn" prefWidth="319.69818115234375" text="Reservation time" />
+           </columns>
+         </TableView>
+         <Button mnemonicParsing="false" onAction="#searchReceipts" prefHeight="32.0" prefWidth="73.0" text="Search" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+         <ComboBox fx:id="paymentMethodComboBox" prefWidth="150.0" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+         <Label text="Payment method:" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+            <font>
+               <Font size="15.0" />
+            </font>
+            <GridPane.margin>
+               <Insets right="10.0" />
+            </GridPane.margin>
+         </Label>
+         <Label text="Receipts screen" GridPane.columnSpan="4" GridPane.halignment="CENTER">
+            <font>
+               <Font name="System Bold" size="28.0" />
+            </font>
+         </Label>
+         <Button mnemonicParsing="false" onAction="#resetButton" prefHeight="31.0" prefWidth="64.0" text="Reset" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+      </children>
+   </GridPane>
+
+</AnchorPane>

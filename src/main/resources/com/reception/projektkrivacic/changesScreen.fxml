@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1003.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.reception.projektkrivacic.controllers.ChangesScreenController">
+
+    <ToolBar prefHeight="60.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+        <items>
+            <Label fx:id="usernameLabel" prefHeight="43.0" prefWidth="87.0" text="User123">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+                <padding>
+                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                </padding>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#changeToShowAccommodationsScene" prefHeight="40.0" prefWidth="139.0" style="-fx-background-color: #0876fd;" text="Accommodations" />
+            <Region prefHeight="50.0" prefWidth="20.0" />
+            <Button mnemonicParsing="false" onAction="#changeToSearchReservationsScene" prefHeight="30.0" prefWidth="148.0" style="-fx-background-color: #f73636;" text="Reservations" />
+            <Button mnemonicParsing="false" onAction="#changeToReceiptScene" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #f73636;" text="Receipts" />
+            <Button mnemonicParsing="false" onAction="#changeToShowUsersScene" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #f73636;" text="Users" />
+            <Button mnemonicParsing="false" onAction="#changeToHotelFinancesScene" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #f73636;" text="Hotel finances" />
+            <Button fx:id="changeToChangesScene" mnemonicParsing="false" onAction="#changeToChangesScene" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #f73636;" text="Changes" />
+            <Region prefHeight="50.0" prefWidth="20.0" />
+            <Button mnemonicParsing="false" onAction="#changeToLoginScene" prefHeight="40.0" prefWidth="75.0" style="-fx-background-color: #0876fd;" text="Log out" />
+        </items>
+    </ToolBar>
+   <TableView fx:id="changesTableView" layoutX="-1.0" layoutY="213.0" prefHeight="383.0" prefWidth="1003.0">
+     <columns>
+       <TableColumn fx:id="changedEntityTableColumn" prefWidth="125.88680791854858" text="Changed entity" />
+       <TableColumn fx:id="oldValueTableColumn" prefWidth="281.6603775024414" text="Old value" />
+         <TableColumn fx:id="newValueTableColumn" prefWidth="312.4528503417969" text="New value" />
+         <TableColumn fx:id="roleTableColumn" prefWidth="107.7735595703125" text="Role" />
+         <TableColumn fx:id="changeTimeTableColumn" prefWidth="170.2642822265625" text="Change time" />
+     </columns>
+   </TableView>
+   <Button layoutX="492.0" layoutY="155.0" mnemonicParsing="false" onAction="#showChanges" prefHeight="32.0" prefWidth="66.0" text="Show" />
+   <Label layoutX="424.0" layoutY="91.0" text="Changes screen">
+      <font>
+         <Font name="System Bold" size="28.0" />
+      </font>
+   </Label>
+</AnchorPane>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.reception.projektkrivacic.controllers.UsersScreenController">
+
+    <ToolBar prefHeight="60.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+        <items>
+            <Label fx:id="usernameLabel" prefHeight="43.0" prefWidth="87.0" text="User123">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+                <padding>
+                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                </padding>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#changeToShowAccommodationsScene" prefHeight="40.0" prefWidth="139.0" style="-fx-background-color: #0876fd;" text="Accommodations" />
+            <Region prefHeight="50.0" prefWidth="20.0" />
+            <Button mnemonicParsing="false" onAction="#changeToSearchReservationsScene" prefHeight="30.0" prefWidth="148.0" style="-fx-background-color: #f73636;" text="Reservations" />
+            <Button mnemonicParsing="false" onAction="#changeToReceiptScene" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #f73636;" text="Receipts" />
+            <Button mnemonicParsing="false" onAction="#changeToShowUsersScene" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #f73636;" text="Users" />
+            <Button mnemonicParsing="false" onAction="#changeToHotelFinancesScene" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #f73636;" text="Hotel finances" />
+            <Button mnemonicParsing="false" onAction="#changeToChangesScreen" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #f73636;" text="Changes" />
+            <Region prefHeight="50.0" prefWidth="20.0" />
+            <Button mnemonicParsing="false" onAction="#changeToLoginScene" prefHeight="40.0" prefWidth="75.0" style="-fx-background-color: #0876fd;" text="Log out" />
+        </items>
+    </ToolBar>
+   <GridPane layoutX="8.0" layoutY="61.0" prefHeight="537.0" prefWidth="992.0">
+     <columnConstraints>
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+     </columnConstraints>
+     <rowConstraints>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+         <TableView fx:id="usersTableView" prefHeight="200.0" prefWidth="1187.0" GridPane.columnSpan="4" GridPane.rowIndex="2" GridPane.rowSpan="2">
+           <columns>
+             <TableColumn fx:id="userIdColumn" prefWidth="41.66033935546875" text="ID" />
+             <TableColumn fx:id="usernameColumn" prefWidth="141.28308868408203" text="Username" />
+               <TableColumn fx:id="firstNameColumn" prefWidth="130.4150390625" text="First name" />
+               <TableColumn fx:id="lastNameColumn" prefWidth="146.71697998046875" text="Last name" />
+               <TableColumn fx:id="addressColumn" prefWidth="371.3207092285156" text="Address" />
+               <TableColumn fx:id="roleTableColumn" minWidth="0.0" prefWidth="159.3962287400375" text="Role" />
+           </columns>
+            <GridPane.margin>
+               <Insets right="3.0" />
+            </GridPane.margin>
+         </TableView>
+         <Button mnemonicParsing="false" onAction="#searchUsers" text="Search" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Button>
+         <TextField fx:id="usernameTextField" prefHeight="25.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         <Label text="Search by username:" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+            <GridPane.margin>
+               <Insets right="5.0" />
+            </GridPane.margin>
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Label>
+         <CheckBox fx:id="employeesOnlyCheckBox" mnemonicParsing="false" text="Employees only" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </CheckBox>
+         <Label text="Users screen" GridPane.columnSpan="4" GridPane.halignment="CENTER">
+            <font>
+               <Font name="System Bold" size="28.0" />
+            </font>
+         </Label>
+      </children>
+   </GridPane>
+</AnchorPane>

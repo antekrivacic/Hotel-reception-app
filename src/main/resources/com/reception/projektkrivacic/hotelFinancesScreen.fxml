@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="501.0" prefWidth="1001.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.reception.projektkrivacic.controllers.HotelFinancesScreenController">
+
+    <ToolBar prefHeight="60.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+        <items>
+            <Label fx:id="usernameLabel" prefHeight="43.0" prefWidth="87.0" text="User123">
+                <font>
+                    <Font name="System Bold" size="12.0" />
+                </font>
+                <padding>
+                    <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                </padding>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#changeToShowAccommodationsScene" prefHeight="40.0" prefWidth="139.0" style="-fx-background-color: #0876fd;" text="Accommodations" />
+            <Region prefHeight="50.0" prefWidth="20.0" />
+            <Button mnemonicParsing="false" onAction="#changeToSearchReservationsScene" prefHeight="30.0" prefWidth="148.0" style="-fx-background-color: #f73636;" text="Reservations" />
+            <Button mnemonicParsing="false" onAction="#changeToReceiptScene" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #f73636;" text="Receipts" />
+            <Button mnemonicParsing="false" onAction="#changeToShowUsersScene" prefHeight="30.0" prefWidth="110.0" style="-fx-background-color: #f73636;" text="Users" />
+            <Button mnemonicParsing="false" onAction="#changeToHotelFinancesScene" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #f73636;" text="Hotel finances" />
+            <Button mnemonicParsing="false" onAction="#changeToChangesScreen" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #f73636;" text="Changes" />
+            <Region prefHeight="50.0" prefWidth="20.0" />
+            <Button mnemonicParsing="false" onAction="#changeToLoginScene" prefHeight="40.0" prefWidth="75.0" style="-fx-background-color: #0876fd;" text="Log out" />
+        </items>
+    </ToolBar>
+   <GridPane layoutX="4.0" layoutY="72.0" prefHeight="427.0" prefWidth="993.0">
+     <columnConstraints>
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+         <TableView fx:id="hotelFinancesTableView" prefHeight="210.0" prefWidth="993.0" styleClass="my-table-view" GridPane.columnSpan="2" GridPane.rowIndex="1">
+           <columns>
+             <TableColumn fx:id="currentIncomeColumn" prefWidth="299.77351665496826" text="Current income" />
+             <TableColumn fx:id="currentExpensesColumn" prefWidth="336.9057922363281" text="Current expenses" />
+               <TableColumn fx:id="totalProfitColumn" prefWidth="352.30181884765625" text="Current profit" />
+           </columns>
+
+         </TableView>
+         <Button mnemonicParsing="false" onAction="#showThisHotelFinances" prefHeight="47.0" prefWidth="220.0" text="Show this hotel finances" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+            <font>
+               <Font name="System Bold Italic" size="16.0" />
+            </font>
+         </Button>
+      </children>
+   </GridPane>
+</AnchorPane>
